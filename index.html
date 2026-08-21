@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Espinosa | Data Analyst</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0066cc;
+            --dark: #0a3d62;
+            --light: #ecf0f1;
+            --text: #2c3e50;
+            --gray: #95a5a6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: #f8f9fa;
+        }
+
+        /* HEADER / HERO */
+        header {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid white;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .hero-text p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .contact-links a:hover {
+            background: rgba(255,255,255,0.3);
+            border-color: white;
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .about h2 {
+            color: var(--dark);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 10px;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        /* SKILLS */
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .skill-box {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .skill-box h3 {
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .skill-box p {
+            font-size: 0.95rem;
+            color: var(--gray);
+        }
+
+        /* PROJECTS */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .project {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #0052a3 100%);
+            color: white;
+            padding: 30px;
+        }
+
+        .project-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .project-header .date {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .project-body {
+            padding: 30px;
+        }
+
+        .project-body h4 {
+            color: var(--dark);
+            margin: 20px 0 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .project-body p, .project-body ul {
+            font-size: 0.95rem;
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .project-body ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .project-body li {
+            margin-bottom: 8px;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tech-tag {
+            background: var(--light);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .project-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            margin: 20px 0;
+            border-radius: 5px;
+            background: #f0f0f0;
+            padding: 10px;
+        }
+
+        .images-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+            border: 2px solid var(--light);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            opacity: 0.9;
+        }
+
+        footer a {
+            color: #00d4ff;
+            text-decoration: none;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+
+            .hero-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .about, .project-body, .project-header {
+                padding: 20px;
+            }
+
+            .contact-links {
+                flex-direction: column;
+            }
+
+            .contact-links a {
+                width: 100%;
+            }
+        }
+
+        /* HIGHLIGHT NUMBERS */
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--dark);
+            font-size: 2rem;
+            margin-bottom: 40px;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="hero-content">
+            <div class="hero-photo">
+                <img src="images/foto-perfil.png" alt="Daniel Espinosa">
+            </div>
+            <div class="hero-text">
+                <h1>Daniel Espinosa Arango</h1>
+                <p>Data Analyst Junior</p>
+                <p style="font-size: 1rem; opacity: 0.9;">Transformando datos en decisiones de negocio</p>
+                <div class="contact-links">
+                    <a href="mailto:danielespinosarango@gmail.com">📧 Email</a>
+                    <a href="https://www.linkedin.com/in/danielespinosarango/" target="_blank">💼 LinkedIn</a>
+                    <a href="https://github.com/DanielEspinosaArango" target="_blank">💻 GitHub</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+
+        <!-- ABOUT SECTION -->
+        <section class="about">
+            <h2>Sobre mí</h2>
+            <p>
+                Soy un <span class="highlight">Data Analyst Junior</span> con mentalidad de negocio y experiencia emprendedora. 
+                Especializado en <span class="highlight">Python, SQL y Tableau</span>, con capacidad demostrada para 
+                transformar datos complejos en insights accionables. 
+            </p>
+            <p style="margin-top: 15px;">
+                Mi carrera comenzó en finanzas y comercio exterior. Luego, como emprendedor, creé sistemas automatizados 
+                que generaban insights en tiempo real y reportes que impactaban directamente las ganancias. Esa experiencia 
+                me mostró que <span class="highlight">los datos bien analizados transforman empresas</span>.
+            </p>
+            
+            <div class="skills">
+                <div class="skill-box">
+                    <h3>🔧 Tecnologías</h3>
+                    <p>Python • SQL • Tableau • Excel • Pandas • Git • Jupyter</p>
+                </div>
+                <div class="skill-box">
+                    <h3>💡 Habilidades</h3>
+                    <p>Análisis EDA • ETL • Automatización • Business Analytics</p>
+                </div>
+                <div class="skill-box">
+                    <h3>🌐 Idiomas</h3>
+                    <p>Español (Nativo) • Inglés (B1) • Portugués (Intermedio-Avanzado)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <h2 class="section-title">Proyectos Destacados</h2>
+
+        <div class="projects">
+
+            <!-- PROYECTO 1 -->
+            <div class="project">
+                <div class="project-header">
+                    <h3>📊 Análisis de Movilidad Urbana y Economía</h3>
+                    <p class="date">TripleTen Bootcamp | Junio 2025</p>
+                </div>
+                <div class="project-body">
+                    <h4>🎯 Problema</h4>
+                    <p>
+                        Evaluar cómo la movilidad urbana (congestión vehicular) se relaciona con la productividad económica 
+                        en las principales ciudades latinoamericanas para identificar dónde priorizar inversión en infraestructura.
+                    </p>
+
+                    <h4>✅ Qué hiciste</h4>
+                    <ul>
+                        <li>Integré datos de <strong>TomTom Traffic Index + OECD Cities</strong> para 15 ciudades en 2024</li>
+                        <li>Realicé <strong>limpieza de datos compleja</strong>: corrección de formatos, conversión de fechas, manejo de valores faltantes</li>
+                        <li>Ejecuté <strong>análisis exploratorio (EDA)</strong> con validación de distribuciones y detección de outliers</li>
+                        <li>Creé <strong>visualizaciones interactivas</strong> comparando congestión vs PIB per cápita</li>
+                    </ul>
+
+                    <h4>📈 Resultado Principal</h4>
+                    <p>
+                        Identifiqué que <span class="highlight">Bogotá presenta la combinación más crítica</span>: 
+                        altos niveles de congestión (jams_delay: 1,141.55) + PIB per cápita bajo (11,442). 
+                        Candidata prioritaria para inversión en infraestructura.
+                    </p>
+
+                    <h4>📊 Gráficos del Análisis</h4>
+                    <div class="images-gallery">
+                        <img src="images/download.png" class="gallery-img" alt="Distribución PIB per cápita">
+                        <img src="images/download__1_.png" class="gallery-img" alt="Comparación JamsDelay vs PIB">
+                        <img src="images/download__2_.png" class="gallery-img" alt="Boxplot JamsDelay">
+                    </div>
+
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">Matplotlib</span>
+                        <span class="tech-tag">EDA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROYECTO 2 -->
+            <div class="project">
+                <div class="project-header">
+                    <h3>🛒 Análisis de Embudo y Retención para MercadoLibre</h3>
+                    <p class="date">TripleTen Bootcamp | Enero - Agosto 2025</p>
+                </div>
+                <div class="project-body">
+                    <h4>🎯 Problema</h4>
+                    <p>
+                        Identificar dónde se pierden usuarios en el embudo de conversión y cómo varía la retención a lo largo 
+                        del tiempo para optimizar estrategias de activación y conversión.
+                    </p>
+
+                    <h4>✅ Qué hiciste</h4>
+                    <ul>
+                        <li>Analicé el <strong>embudo completo de 7 etapas</strong> (first_visit → purchase)</li>
+                        <li>Calculé <strong>tasas de conversión por país</strong> (9 países latinoamericanos)</li>
+                        <li>Medí <strong>retención cohort</strong> (D7, D14, D21, D28) para usuarios registrados</li>
+                        <li>Identifiqué <span class="highlight">caída de 86% entre select_item y add_to_cart</span></li>
+                        <li>Detecté <strong>segunda fuga masiva entre D14-D21</strong></li>
+                    </ul>
+
+                    <h4>📈 Resultado Principal</h4>
+                    <p>
+                        El <span class="highlight">cuello de botella crítico es select_item → add_to_cart (pérdida de 66%)</span>. 
+                        Uruguay lidera conversión final (4.55%), mientras Paraguay/Ecuador/Colombia registran 0% (problemas técnicos locales). 
+                        La mayor fuga en retención ocurre entre días 14-21.
+                    </p>
+
+                    <h4>📊 Tablas de Análisis</h4>
+                    <div class="images-gallery">
+                        <img src="images/proyecto2-retention.png" class="gallery-img" alt="Tabla Retención Cohort">
+                        <img src="images/proyecto2-conversion.png" class="gallery-img" alt="Tabla Conversión por País">
+                    </div>
+
+                    <div class="tech-tags">
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">Análisis Cohortes</span>
+                        <span class="tech-tag">Retención</span>
+                        <span class="tech-tag">CTE</span>
+                        <span class="tech-tag">Analytics</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Daniel Espinosa Arango | Data Analyst</p>
+        <p>Bogotá, Colombia | <a href="mailto:danielespinosarango@gmail.com">danielespinosarango@gmail.com</a></p>
+    </footer>
+
+</body>
+</html>
