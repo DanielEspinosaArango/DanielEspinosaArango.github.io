@@ -468,6 +468,73 @@
                 </div>
             </div>
 
+            <!-- PROYECTO 3 -->
+            <div class="project">
+                <div class="project-header">
+                    <h3>📱 Análisis ConnectaTel: Segmentación de Clientes</h3>
+                    <p class="date">TripleTen Bootcamp | 2024</p>
+                </div>
+                <div class="project-body">
+                    <h4>🎯 Problema</h4>
+                    <p>
+                        Evaluar el comportamiento de clientes de una empresa de telecomunicaciones en Latinoamérica 
+                        para identificar <span class="highlight">patrones de consumo, detectar clientes de alto valor</span> 
+                        y diseñar estrategias de retención basadas en segmentación.
+                    </p>
+
+                    <h4>✅ Qué hiciste</h4>
+                    <ul>
+                        <li>Cargué y exploré <strong>3 datasets integrados</strong> (plans, users_latam, usage) con 4,000 clientes</li>
+                        <li>Realicé <strong>limpieza de datos compleja</strong>: detecté y corregí sentinels (-999), valores faltantes (96 registros), fechas imposibles (año 2026)</li>
+                        <li>Validé que solo <span class="highlight">3.05% de datos tenían problemas reales</span>, los valores nulos en usage eran MNAR (patrones naturales del negocio)</li>
+                        <li>Generé <strong>resumen estadístico por usuario</strong> (llamadas, mensajes, minutos, churn) durante 2024</li>
+                        <li>Realicé <strong>análisis de outliers</strong> con boxplots: identificué usuarios de Alto Uso que consumían 6-7x más recursos</li>
+                        <li>Creé <strong>segmentación dual</strong>: por edad (Joven, Adulto, Adulto Mayor) y por uso (Bajo, Medio, Alto)</li>
+                    </ul>
+
+                    <h4>📈 Resultados Principales</h4>
+                    <p>
+                        Base de clientes <span class="highlight">87.5% adultos</span> (edad media-alta). Segmentación de uso: 
+                        <strong>27.5% Bajo Uso</strong> (3.2 llamadas), 
+                        <strong>50% Uso Medio</strong> (4.5 llamadas), 
+                        <strong>22.5% Alto Uso</strong> (8.2 llamadas, generan 6-7x más ingresos por sobrecuota).
+                    </p>
+
+                    <h4>💡 Recomendaciones Implementadas</h4>
+                    <ul>
+                        <li><strong>Plan "Premium Plus"</strong> (500+ min, 1000+ msg, 100+ GB) a $35-45/mes para usuarios de Alto Uso</li>
+                        <li><strong>Campaña de Upsell</strong> dirigida a usuarios Medio que excedan 80% de límites (10-15% potencial de conversión)</li>
+                        <li><strong>Plan "Básico Plus"</strong> mejorado para transición entre segmentos</li>
+                        <li>Programa de <strong>retención para Power Users</strong> con incentivos de cashback</li>
+                        <li>Revisión de costos extras ($0.05-0.10 por servicio) vs estructura competitiva</li>
+                    </ul>
+
+                    <h4>📊 Visualizaciones del Análisis</h4>
+                    <div class="images-gallery">
+                        <img src="images/conectatel-edad.png" class="gallery-img" alt="Distribución de Edad por Plan">
+                        <img src="images/conectatel-llamadas.png" class="gallery-img" alt="Distribución de Llamadas por Plan">
+                        <img src="images/conectatel-mensajes.png" class="gallery-img" alt="Distribución de Mensajes por Plan">
+                        <img src="images/conectatel-minutos.png" class="gallery-img" alt="Distribución de Minutos por Plan">
+                    </div>
+
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">Matplotlib</span>
+                        <span class="tech-tag">Seaborn</span>
+                        <span class="tech-tag">EDA</span>
+                        <span class="tech-tag">Segmentación</span>
+                    </div>
+
+                    <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #ecf0f1;">
+                        <a href="https://github.com/DanielEspinosaArango/telecom-analysis" target="_blank" style="display: inline-block; background: linear-gradient(135deg, var(--primary) 0%, #0052a3 100%); color: white; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: 500; transition: all 0.3s;">
+                            🔗 Ver Código en GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </div>
